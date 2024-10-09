@@ -55,6 +55,7 @@ const AboutText = styled.div`
   }
 `;
 
+// Using animated.img directly
 const AboutImage = styled(animated.img)`
   width: 350px;
   height: 350px;
@@ -87,19 +88,22 @@ const About: React.FC = () => {
     config: { tension: 300, friction: 20 },
   });
 
+  // Wrap the AboutText with animated.div
   return (
     <AboutSection>
       <div className="container">
         <AboutContent>
-          <AboutText style={textProps}>
-            <h2>Sobre Mim</h2>
-            <p>
-              Sou um desenvolvedor com 3 anos de experiência no mercado e uma forte paixão por tecnologia aos 19 anos de idade. Atualmente, busco novas oportunidades no mercado de TI, enquanto curso Análise e Desenvolvimento de Sistemas.
-            </p>
-            <p>
-              Minha paixão por software vem de transformar ideias em realidade através de interfaces funcionais e elegantes. Procuro criar produtos de alta qualidade e estou sempre disposto a aprender novas tecnologias e ajudar quem precisa de orientação.
-            </p>
-          </AboutText>
+          <animated.div style={textProps}>
+            <AboutText>
+              <h2>Sobre Mim</h2>
+              <p>
+                Sou um desenvolvedor com 3 anos de experiência no mercado e uma forte paixão por tecnologia aos 19 anos de idade. Atualmente, busco novas oportunidades no mercado de TI, enquanto curso Análise e Desenvolvimento de Sistemas.
+              </p>
+              <p>
+                Minha paixão por software vem de transformar ideias em realidade através de interfaces funcionais e elegantes. Procuro criar produtos de alta qualidade e estou sempre disposto a aprender novas tecnologias e ajudar quem precisa de orientação.
+              </p>
+            </AboutText>
+          </animated.div>
           <AboutImage style={imageProps} src="src/assets/foto-natan.webp" alt="Natan Pereira Mendes" />
         </AboutContent>
       </div>
